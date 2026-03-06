@@ -34,9 +34,9 @@ export default async function ToolPage({ params }: ToolPageProps) {
 
   if (tool.isImplemented && tool.inputMode === "single-image") {
     content = <SingleImageToolForm tool={tool} />;
-  } else if (!tool.isImplemented && tool.inputMode === "multi-image-sequence") {
+  } else if (tool.isImplemented && tool.inputMode === "multi-image-sequence") {
     content = <MultiImageSequenceForm tool={tool} />;
-  } else if (!tool.isImplemented && tool.inputMode === "text-plus-options") {
+  } else if (tool.isImplemented && tool.inputMode === "text-plus-options") {
     content = <TextPlusOptionsForm tool={tool} />;
   }
 

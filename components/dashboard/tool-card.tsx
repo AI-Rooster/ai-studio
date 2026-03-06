@@ -10,7 +10,7 @@ export default function ToolCard({ tool }: ToolCardProps) {
   return (
     <Link
       href={`/tools/${tool.id}`}
-      className="group rounded-2xl border border-zinc-800 bg-zinc-900 p-5 transition hover:border-zinc-700 hover:bg-zinc-900/80"
+      className="block rounded-2xl border border-zinc-800 bg-zinc-900 p-5 transition hover:border-zinc-700 hover:bg-zinc-900/80"
     >
       <div className="mb-4 flex items-start justify-between gap-3">
         <div>
@@ -50,7 +50,7 @@ export default function ToolCard({ tool }: ToolCardProps) {
         </div>
       </div>
 
-      <div className="mt-5 text-sm font-medium text-white/90 group-hover:text-white">
+      <div className="mt-5 text-sm font-medium text-white/90 hover:text-white">
         Open tool {"->"}
       </div>
     </Link>
