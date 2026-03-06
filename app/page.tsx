@@ -8,28 +8,66 @@ export default async function HomePage() {
   } = await supabase.auth.getUser();
 
   return (
-    <main className="min-h-screen bg-black text-white px-6 py-12">
-      <div className="mx-auto max-w-5xl">
-        <h1 className="text-5xl font-bold mb-4">AI Studio</h1>
-        <p className="text-zinc-400 mb-8">
-          MVP do generowania obrazów i filmów przez Comfy Cloud API.
-        </p>
+    <main className="min-h-screen bg-black px-6 py-14 text-white">
+      <div className="mx-auto max-w-6xl">
+        <div className="mb-14 max-w-3xl">
+          <div className="mb-3 text-xs uppercase tracking-[0.25em] text-zinc-500">
+            AI Creative Studio
+          </div>
+          <h1 className="mb-4 text-6xl font-bold leading-tight">
+            Marketing tools powered by Comfy workflows
+          </h1>
+          <p className="text-lg leading-8 text-zinc-400">
+            A growing creative system for product visuals, video, campaign assets,
+            avatar tools and rapid marketing experimentation.
+          </p>
 
-        {user ? (
-          <Link
-            href="/private"
-            className="rounded-lg bg-white text-black px-5 py-3 font-medium"
-          >
-            Wejdź do panelu
-          </Link>
-        ) : (
-          <Link
-            href="/login"
-            className="rounded-lg bg-white text-black px-5 py-3 font-medium"
-          >
-            Zaloguj / zarejestruj się
-          </Link>
-        )}
+          <div className="mt-8 flex flex-wrap gap-4">
+            {user ? (
+              <>
+                <Link
+                  href="/tools"
+                  className="rounded-xl bg-white px-5 py-3 font-medium text-black"
+                >
+                  Open tools
+                </Link>
+                <Link
+                  href="/private"
+                  className="rounded-xl border border-zinc-700 px-5 py-3 font-medium text-white"
+                >
+                  Go to dashboard
+                </Link>
+              </>
+            ) : (
+              <Link
+                href="/login"
+                className="rounded-xl bg-white px-5 py-3 font-medium text-black"
+              >
+                Zaloguj / zarejestruj się
+              </Link>
+            )}
+          </div>
+        </div>
+
+        <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+          {[
+            "8-Angle Visuals",
+            "6-Frame Motion",
+            "Icon Forge",
+            "Lip Sync",
+            "Text to Video",
+            "Infinite Talk",
+            "Product Grid",
+            "Scene Variants",
+          ].map((item) => (
+            <div
+              key={item}
+              className="rounded-2xl border border-zinc-800 bg-zinc-900 p-5 text-zinc-300"
+            >
+              {item}
+            </div>
+          ))}
+        </div>
       </div>
     </main>
   );
