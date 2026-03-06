@@ -15,21 +15,23 @@ export default async function HomePage() {
           MVP do generowania obrazów i filmów przez Comfy Cloud API.
         </p>
 
-        {user ? (
-          <Link
-            href="/private"
-            className="rounded-lg bg-white text-black px-5 py-3 font-medium"
-          >
-            Wejdź do panelu
-          </Link>
-        ) : (
-          <Link
-            href="/login"
-            className="rounded-lg bg-white text-black px-5 py-3 font-medium"
-          >
-            Zaloguj / zarejestruj się
-          </Link>
-        )}
+        <div className="flex flex-wrap gap-4">
+          {user ? (
+            <Link
+              href="/private"
+              className="rounded-lg bg-white text-black px-5 py-3 font-medium"
+            >
+              Wejdź do panelu
+            </Link>
+          ) : (
+            <Link
+              href="/login"
+              className="rounded-lg bg-white text-black px-5 py-3 font-medium"
+            >
+              Zaloguj / zarejestruj się
+            </Link>
+          )}
+        </div>
       </div>
     </main>
   );
