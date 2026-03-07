@@ -1,0 +1,11 @@
+if (tool.id === "image-to-image") {
+  return (
+    <ToolShell tool={tool}>
+      <ImageToImageForm
+        toolId="image-to-image"
+        title="Image to Image"
+        description="Upload one image, adjust the prompt and create a transformed version."
+      />
+    </ToolShell>
+  );
+}

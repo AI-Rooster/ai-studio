@@ -1,0 +1,10 @@
+{
+  id: "image-to-image",
+  title: "Image to Image",
+  shortDescription: "1 image + prompt -> 1 transformed visual",
+  category: "product-visuals",
+  inputMode: "single-image",
+  outputMode: "image-gallery",
+  status: "active",
+  badge: "New",
+},

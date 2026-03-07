@@ -6,6 +6,7 @@ import MultiImageSequenceForm from "@/components/forms/multi-image-sequence-form
 import TextPlusOptionsForm from "@/components/forms/text-plus-options-form";
 import IconForgeForm from "@/components/forms/icon-forge-form";
 import LipSyncForm from "@/components/forms/lip-sync-form";
+import ImageToImageForm from "@/components/forms/image-to-image-form";
 import { createClient } from "@/lib/supabase/server";
 import { getToolById } from "@/lib/tools/registry";
 
@@ -36,6 +37,8 @@ export default async function ToolPage({ params }: ToolPageProps) {
 
   if (tool.id === "lip-sync" && tool.isImplemented) {
     content = <LipSyncForm tool={tool} />;
+  } else if (tool.id === "image-to-image" && tool.isImplemented) {
+    content = <ImageToImageForm />;
   } else if (tool.id === "icon-forge" && tool.isImplemented) {
     content = <IconForgeForm tool={tool} />;
   } else if (tool.isImplemented && tool.inputMode === "single-image") {
