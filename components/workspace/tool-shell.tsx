@@ -72,6 +72,13 @@ export default function ToolShell({ tool, children }: ToolShellProps) {
               </div>
             </div>
           </div>
+
+          {tool.creditCostNote ? (
+            <div className="mt-4 rounded-2xl border border-amber-900/60 bg-amber-950/30 p-4 text-sm text-amber-200">
+              <strong className="mr-2">Credit note:</strong>
+              {tool.creditCostNote}
+            </div>
+          ) : null}
         </div>
 
         {children}

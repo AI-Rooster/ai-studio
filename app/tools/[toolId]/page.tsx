@@ -4,6 +4,8 @@ import ToolComingSoon from "@/components/workspace/tool-coming-soon";
 import SingleImageToolForm from "@/components/forms/single-image-tool-form";
 import MultiImageSequenceForm from "@/components/forms/multi-image-sequence-form";
 import TextPlusOptionsForm from "@/components/forms/text-plus-options-form";
+import IconForgeForm from "@/components/forms/icon-forge-form";
+import LipSyncForm from "@/components/forms/lip-sync-form";
 import { createClient } from "@/lib/supabase/server";
 import { getToolById } from "@/lib/tools/registry";
 
@@ -32,7 +34,11 @@ export default async function ToolPage({ params }: ToolPageProps) {
 
   let content: React.ReactNode = <ToolComingSoon tool={tool} />;
 
-  if (tool.isImplemented && tool.inputMode === "single-image") {
+  if (tool.id === "lip-sync" && tool.isImplemented) {
+    content = <LipSyncForm tool={tool} />;
+  } else if (tool.id === "icon-forge" && tool.isImplemented) {
+    content = <IconForgeForm tool={tool} />;
+  } else if (tool.isImplemented && tool.inputMode === "single-image") {
     content = <SingleImageToolForm tool={tool} />;
   } else if (tool.isImplemented && tool.inputMode === "multi-image-sequence") {
     content = <MultiImageSequenceForm tool={tool} />;

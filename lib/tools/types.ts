@@ -17,6 +17,7 @@ export type ToolOutputMode =
   | "json";
 
 export type ToolStatus = "active" | "beta" | "coming-soon";
+export type ToolCreditMode = "standard" | "premium";
 
 export type ToolDefinition = {
   id: string;
@@ -36,4 +37,6 @@ export type ToolDefinition = {
   statusRouteBase?: string;
   detailsRouteBase?: string;
   outputRoute?: string;
+  creditMode?: ToolCreditMode;
+  creditCostNote?: string;
 };
