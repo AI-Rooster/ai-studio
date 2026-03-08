@@ -1,0 +1,7 @@
+Znajdź wpis dla `text-to-video` w `lib/tools/registry.ts` i zmień:
+
+status: "coming-soon"
+
+na:
+
+status: "active"

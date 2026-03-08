@@ -1,4 +1,4 @@
-import { ToolDefinition } from "@/lib/tools/types";
+import { ToolDefinition } from "./types";
 
 export const tools: ToolDefinition[] = [
   {
@@ -11,7 +11,6 @@ export const tools: ToolDefinition[] = [
     status: "active",
     badge: "New",
     accepts: ["image/png", "image/jpeg", "image/webp"],
-    creditMode: "standard",
   },
   {
     id: "image-to-image",
@@ -23,19 +22,17 @@ export const tools: ToolDefinition[] = [
     status: "active",
     badge: "New",
     accepts: ["image/png", "image/jpeg", "image/webp"],
-    creditMode: "standard",
   },
   {
     id: "material-change",
     title: "Material Change",
-    shortDescription: "Product image + material reference -> updated product finish",
+    shortDescription: "Product image + material reference -> updated surface look",
     category: "product-visuals",
-    inputMode: "two-images",
+    inputMode: "multi-image",
     outputMode: "image-gallery",
     status: "active",
     badge: "New",
     accepts: ["image/png", "image/jpeg", "image/webp"],
-    creditMode: "standard",
   },
   {
     id: "six-frame-video",
@@ -47,31 +44,28 @@ export const tools: ToolDefinition[] = [
     status: "active",
     badge: "Hot",
     accepts: ["image/png", "image/jpeg", "image/webp"],
-    creditMode: "standard",
   },
   {
     id: "image-to-video",
     title: "Image to Video",
-    shortDescription: "1 image + prompt -> generated motion clip",
+    shortDescription: "1 image + motion settings -> generated video",
     category: "motion",
     inputMode: "single-image",
     outputMode: "video",
     status: "active",
     badge: "New",
     accepts: ["image/png", "image/jpeg", "image/webp"],
-    creditMode: "standard",
   },
   {
     id: "text-to-video",
     title: "Text to Video",
-    shortDescription: "Prompt -> generated video clip",
+    shortDescription: "Prompt + timing settings -> generated motion video",
     category: "motion",
     inputMode: "text-plus-options",
     outputMode: "video",
     status: "active",
     badge: "New",
     accepts: [],
-    creditMode: "standard",
   },
   {
     id: "lip-sync",
@@ -82,43 +76,20 @@ export const tools: ToolDefinition[] = [
     outputMode: "video",
     status: "active",
     badge: "New",
-    accepts: ["image/png", "image/jpeg", "image/webp", "audio/wav", "audio/mp3", "audio/mpeg"],
-    creditMode: "standard",
+    accepts: ["image/png", "image/jpeg", "image/webp", "audio/*"],
   },
   {
     id: "product-grid",
     title: "Product Grid",
-    shortDescription: "1 product image -> stitched grid + tiles + selected upscale",
+    shortDescription: "1 product image -> stitched grid + tiles + upscale",
     category: "campaign-assets",
     inputMode: "single-image",
     outputMode: "image-gallery",
     status: "active",
     badge: "Premium",
     accepts: ["image/png", "image/jpeg", "image/webp"],
-    creditMode: "premium",
-    creditCostNote: "This tool uses extra credits.",
-  },
-  {
-    id: "icon-forge",
-    title: "Icon Forge",
-    shortDescription: "Reference style + brand context -> 9-icon pack",
-    category: "campaign-assets",
-    inputMode: "image-plus-text",
-    outputMode: "image-gallery",
-    status: "active",
-    badge: "Premium",
-    accepts: ["image/png", "image/jpeg", "image/webp"],
-    creditMode: "premium",
-    creditCostNote: "This tool uses extra credits.",
   },
 ];
-
-export const toolCategories = [
-  "product-visuals",
-  "motion",
-  "campaign-assets",
-  "avatar-tools",
-] as const;
 
 export function getToolById(toolId: string) {
   return tools.find((tool) => tool.id === toolId);

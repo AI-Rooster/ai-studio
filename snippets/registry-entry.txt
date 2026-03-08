@@ -1,0 +1,19 @@
+{
+  id: "motion-transfer",
+  title: "Motion Transfer",
+  shortDescription: "Control video + reference image -> new guided video",
+  category: "motion",
+  inputMode: "video-plus-image",
+  outputMode: "video",
+  status: "active",
+  badge: "New",
+  accepts: [
+    "video/mp4",
+    "video/webm",
+    "video/quicktime",
+    "video/x-matroska",
+    "image/png",
+    "image/jpeg",
+    "image/webp",
+  ],
+}
