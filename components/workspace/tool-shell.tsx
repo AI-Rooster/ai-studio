@@ -68,7 +68,9 @@ export default function ToolShell({ tool, children }: ToolShellProps) {
                 Accepts
               </div>
               <div className="break-words text-zinc-200">
-                {tool.accepts.length > 0 ? tool.accepts.join(", ") : "text / options"}
+                {Array.isArray(tool.accepts) && tool.accepts.length > 0
+  ? tool.accepts.join(", ")
+  : "text / options"}
               </div>
             </div>
           </div>

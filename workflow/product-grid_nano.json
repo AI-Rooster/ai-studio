@@ -1,0 +1,861 @@
+{
+  "10": {
+    "inputs": {
+      "prompt": "Create an editorial photoreal 3×3 grid for a high end e commerce ad featuring only the following product: purple glass bottle with galaxy texture.\n\nBackground: minimalist studio.  \nLighting: soft and diffused.\n\nGenerate as one 3×3 grid with no margin, gutter or borders.\n\nFollow the prompts for each grid image. If left blank use your creativity:\n\nPosition 1,1: Product hero shot\n\nPosition 1,2: Product pouring out liquid\n\nPosition 1,3: Extreme close up\n\nPosition 2,1: Bottle being opened with corkscrew bottle opener\n\nPosition 2,2: Bottle floating angled\n\nPosition 2,3: Liquid exploding\n\nPosition 3,1: \n\nPosition 3,2:\n\nPosition 3,3:",
+      "model": "Nano Banana 2 (Gemini 3.1 Flash Image)",
+      "seed": 54320,
+      "aspect_ratio": "auto",
+      "resolution": "2K",
+      "response_modalities": "IMAGE",
+      "system_prompt": "You are an expert image-generation engine. You must ALWAYS produce an image.\nInterpret all user input—regardless of format, intent, or abstraction—as literal visual directives for image composition.\nIf a prompt is conversational or lacks specific visual details, you must creatively invent a concrete visual scenario that depicts the concept.\nPrioritize generating the visual representation above any text, formatting, or conversational requests.",
+      "images": [
+        "11",
+        0
+      ]
+    },
+    "class_type": "GeminiImage2Node",
+    "_meta": {
+      "title": "Nano Banana Pro (Google Gemini Image)"
+    }
+  },
+  "11": {
+    "inputs": {
+      "image": "template-3x3_Grid_For_Product_Ads Assets.png"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Product Image"
+    }
+  },
+  "58": {
+    "inputs": {
+      "value": 0
+    },
+    "class_type": "PrimitiveInt",
+    "_meta": {
+      "title": "Crop Inset Grid Images"
+    }
+  },
+  "59": {
+    "inputs": {
+      "filename_prefix": "ComfyUI-image_1",
+      "images": [
+        "56:29",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "Save Image 1"
+    }
+  },
+  "60": {
+    "inputs": {
+      "filename_prefix": "ComfyUI-image_2",
+      "images": [
+        "56:33",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "Save Image 2"
+    }
+  },
+  "61": {
+    "inputs": {
+      "filename_prefix": "ComfyUI-image_3",
+      "images": [
+        "56:39",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "Save Image 3"
+    }
+  },
+  "62": {
+    "inputs": {
+      "filename_prefix": "ComfyUI-image_4",
+      "images": [
+        "56:40",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "Save Image 4"
+    }
+  },
+  "63": {
+    "inputs": {
+      "filename_prefix": "ComfyUI-image_6",
+      "images": [
+        "56:45",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "Save Image 6"
+    }
+  },
+  "64": {
+    "inputs": {
+      "filename_prefix": "ComfyUI-image_5",
+      "images": [
+        "56:43",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "Save Image 5"
+    }
+  },
+  "65": {
+    "inputs": {
+      "filename_prefix": "ComfyUI-image_7",
+      "images": [
+        "56:46",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "Save Image 7"
+    }
+  },
+  "66": {
+    "inputs": {
+      "filename_prefix": "ComfyUI-image_8",
+      "images": [
+        "56:49",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "Save Image 8"
+    }
+  },
+  "67": {
+    "inputs": {
+      "filename_prefix": "ComfyUI-image_9",
+      "images": [
+        "56:51",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "Save Image 9"
+    }
+  },
+  "68": {
+    "inputs": {
+      "filename_prefix": "ComfyUI-image_stitched",
+      "images": [
+        "10",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "Save Stitched Image"
+    }
+  },
+  "79": {
+    "inputs": {
+      "prompt": "Upscale image 1. Use the product from image 2 as a reference.",
+      "model": "gemini-3-pro-image-preview",
+      "seed": 54321,
+      "aspect_ratio": "auto",
+      "resolution": "4K",
+      "response_modalities": "IMAGE",
+      "system_prompt": "You are an expert image-generation engine. You must ALWAYS produce an image.\nInterpret all user input—regardless of format, intent, or abstraction—as literal visual directives for image composition.\nIf a prompt is conversational or lacks specific visual details, you must creatively invent a concrete visual scenario that depicts the concept.\nPrioritize generating the visual representation above any text, formatting, or conversational requests.",
+      "images": [
+        "93:87",
+        0
+      ]
+    },
+    "class_type": "GeminiImage2Node",
+    "_meta": {
+      "title": "Nano Banana Pro (Google Gemini Image)"
+    }
+  },
+  "81": {
+    "inputs": {
+      "filename_prefix": "ComfyUI-image_upscaled",
+      "images": [
+        "79",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "Save Upscaled Image"
+    }
+  },
+  "91": {
+    "inputs": {
+      "value": 1
+    },
+    "class_type": "PrimitiveInt",
+    "_meta": {
+      "title": "Select Image Number"
+    }
+  },
+  "56:32": {
+    "inputs": {
+      "images": [
+        "56:29",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "56:34": {
+    "inputs": {
+      "images": [
+        "56:33",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "56:41": {
+    "inputs": {
+      "images": [
+        "56:40",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "56:42": {
+    "inputs": {
+      "images": [
+        "56:43",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "56:44": {
+    "inputs": {
+      "images": [
+        "56:45",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "56:47": {
+    "inputs": {
+      "images": [
+        "56:46",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "56:48": {
+    "inputs": {
+      "images": [
+        "56:49",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "56:50": {
+    "inputs": {
+      "images": [
+        "56:51",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "56:38": {
+    "inputs": {
+      "images": [
+        "56:39",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "56:29": {
+    "inputs": {
+      "width": [
+        "56:109",
+        0
+      ],
+      "height": [
+        "56:108",
+        0
+      ],
+      "x": [
+        "56:110",
+        0
+      ],
+      "y": [
+        "56:107",
+        0
+      ],
+      "image": [
+        "10",
+        0
+      ]
+    },
+    "class_type": "ImageCrop",
+    "_meta": {
+      "title": "1"
+    }
+  },
+  "56:33": {
+    "inputs": {
+      "width": [
+        "56:109",
+        0
+      ],
+      "height": [
+        "56:108",
+        0
+      ],
+      "x": [
+        "56:111",
+        0
+      ],
+      "y": [
+        "56:107",
+        0
+      ],
+      "image": [
+        "10",
+        0
+      ]
+    },
+    "class_type": "ImageCrop",
+    "_meta": {
+      "title": "2"
+    }
+  },
+  "56:39": {
+    "inputs": {
+      "width": [
+        "56:109",
+        0
+      ],
+      "height": [
+        "56:108",
+        0
+      ],
+      "x": [
+        "56:114",
+        0
+      ],
+      "y": [
+        "56:107",
+        0
+      ],
+      "image": [
+        "10",
+        0
+      ]
+    },
+    "class_type": "ImageCrop",
+    "_meta": {
+      "title": "3"
+    }
+  },
+  "56:40": {
+    "inputs": {
+      "width": [
+        "56:109",
+        0
+      ],
+      "height": [
+        "56:108",
+        0
+      ],
+      "x": [
+        "56:110",
+        0
+      ],
+      "y": [
+        "56:112",
+        0
+      ],
+      "image": [
+        "10",
+        0
+      ]
+    },
+    "class_type": "ImageCrop",
+    "_meta": {
+      "title": "4"
+    }
+  },
+  "56:43": {
+    "inputs": {
+      "width": [
+        "56:109",
+        0
+      ],
+      "height": [
+        "56:108",
+        0
+      ],
+      "x": [
+        "56:111",
+        0
+      ],
+      "y": [
+        "56:112",
+        0
+      ],
+      "image": [
+        "10",
+        0
+      ]
+    },
+    "class_type": "ImageCrop",
+    "_meta": {
+      "title": "5"
+    }
+  },
+  "56:45": {
+    "inputs": {
+      "width": [
+        "56:109",
+        0
+      ],
+      "height": [
+        "56:108",
+        0
+      ],
+      "x": [
+        "56:114",
+        0
+      ],
+      "y": [
+        "56:112",
+        0
+      ],
+      "image": [
+        "10",
+        0
+      ]
+    },
+    "class_type": "ImageCrop",
+    "_meta": {
+      "title": "6"
+    }
+  },
+  "56:46": {
+    "inputs": {
+      "width": [
+        "56:109",
+        0
+      ],
+      "height": [
+        "56:108",
+        0
+      ],
+      "x": [
+        "56:110",
+        0
+      ],
+      "y": [
+        "56:113",
+        0
+      ],
+      "image": [
+        "10",
+        0
+      ]
+    },
+    "class_type": "ImageCrop",
+    "_meta": {
+      "title": "7"
+    }
+  },
+  "56:49": {
+    "inputs": {
+      "width": [
+        "56:109",
+        0
+      ],
+      "height": [
+        "56:108",
+        0
+      ],
+      "x": [
+        "56:111",
+        0
+      ],
+      "y": [
+        "56:113",
+        0
+      ],
+      "image": [
+        "10",
+        0
+      ]
+    },
+    "class_type": "ImageCrop",
+    "_meta": {
+      "title": "8"
+    }
+  },
+  "56:51": {
+    "inputs": {
+      "width": [
+        "56:109",
+        0
+      ],
+      "height": [
+        "56:108",
+        0
+      ],
+      "x": [
+        "56:114",
+        0
+      ],
+      "y": [
+        "56:113",
+        0
+      ],
+      "image": [
+        "10",
+        0
+      ]
+    },
+    "class_type": "ImageCrop",
+    "_meta": {
+      "title": "9"
+    }
+  },
+  "56:57": {
+    "inputs": {
+      "images": [
+        "56:105",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "56:105": {
+    "inputs": {
+      "inputcount": 9,
+      "Update inputs": null,
+      "image_1": [
+        "56:29",
+        0
+      ],
+      "image_2": [
+        "56:33",
+        0
+      ],
+      "image_3": [
+        "56:39",
+        0
+      ],
+      "image_4": [
+        "56:40",
+        0
+      ],
+      "image_5": [
+        "56:43",
+        0
+      ],
+      "image_6": [
+        "56:45",
+        0
+      ],
+      "image_7": [
+        "56:46",
+        0
+      ],
+      "image_8": [
+        "56:49",
+        0
+      ],
+      "image_9": [
+        "56:51",
+        0
+      ]
+    },
+    "class_type": "ImageBatchMulti",
+    "_meta": {
+      "title": "Image Batch Multi"
+    }
+  },
+  "56:18": {
+    "inputs": {
+      "image": [
+        "10",
+        0
+      ]
+    },
+    "class_type": "GetImageSize",
+    "_meta": {
+      "title": "Get Image Size"
+    }
+  },
+  "56:106": {
+    "inputs": {
+      "value": "a",
+      "a": [
+        "58",
+        0
+      ]
+    },
+    "class_type": "SimpleMath+",
+    "_meta": {
+      "title": "🔧 Simple Math"
+    }
+  },
+  "56:107": {
+    "inputs": {
+      "value": "(b/2)",
+      "b": [
+        "56:106",
+        0
+      ]
+    },
+    "class_type": "SimpleMath+",
+    "_meta": {
+      "title": "Row 1 - Y val"
+    }
+  },
+  "56:108": {
+    "inputs": {
+      "value": "(a-3*b) / 3",
+      "a": [
+        "56:18",
+        1
+      ],
+      "b": [
+        "56:106",
+        0
+      ]
+    },
+    "class_type": "SimpleMath+",
+    "_meta": {
+      "title": "HEIGHT"
+    }
+  },
+  "56:109": {
+    "inputs": {
+      "value": "(a-3*b) / 3",
+      "a": [
+        "56:18",
+        0
+      ],
+      "b": [
+        "56:106",
+        0
+      ]
+    },
+    "class_type": "SimpleMath+",
+    "_meta": {
+      "title": "WIDTH"
+    }
+  },
+  "56:110": {
+    "inputs": {
+      "value": "b/2",
+      "b": [
+        "56:106",
+        0
+      ]
+    },
+    "class_type": "SimpleMath+",
+    "_meta": {
+      "title": "Col 1 - X val"
+    }
+  },
+  "56:111": {
+    "inputs": {
+      "value": "(a+b) + (b/2)",
+      "a": [
+        "56:109",
+        0
+      ],
+      "b": [
+        "56:106",
+        0
+      ]
+    },
+    "class_type": "SimpleMath+",
+    "_meta": {
+      "title": "Col 2 - X val"
+    }
+  },
+  "56:112": {
+    "inputs": {
+      "value": "(a+b) + (b/2)",
+      "a": [
+        "56:108",
+        0
+      ],
+      "b": [
+        "56:106",
+        0
+      ]
+    },
+    "class_type": "SimpleMath+",
+    "_meta": {
+      "title": "Row 2 - Y val"
+    }
+  },
+  "56:113": {
+    "inputs": {
+      "value": "(2*a) + (3*b)",
+      "a": [
+        "56:108",
+        0
+      ],
+      "b": [
+        "56:106",
+        0
+      ]
+    },
+    "class_type": "SimpleMath+",
+    "_meta": {
+      "title": "Row 3 - Y val"
+    }
+  },
+  "56:114": {
+    "inputs": {
+      "value": "(2*a) + (b*3)",
+      "a": [
+        "56:109",
+        0
+      ],
+      "b": [
+        "56:106",
+        0
+      ]
+    },
+    "class_type": "SimpleMath+",
+    "_meta": {
+      "title": "Col 3 - X val"
+    }
+  },
+  "93:83": {
+    "inputs": {
+      "target_width": [
+        "93:86",
+        0
+      ],
+      "target_height": [
+        "93:86",
+        1
+      ],
+      "padding_color": "white",
+      "interpolation": "area",
+      "image": [
+        "11",
+        0
+      ]
+    },
+    "class_type": "ResizeAndPadImage",
+    "_meta": {
+      "title": "ResizeAndPadImage"
+    }
+  },
+  "93:86": {
+    "inputs": {
+      "image": [
+        "93:78",
+        0
+      ]
+    },
+    "class_type": "GetImageSize",
+    "_meta": {
+      "title": "Get Image Size"
+    }
+  },
+  "93:87": {
+    "inputs": {
+      "image1": [
+        "93:78",
+        0
+      ],
+      "image2": [
+        "93:83",
+        0
+      ]
+    },
+    "class_type": "ImageBatch",
+    "_meta": {
+      "title": "Batch Images"
+    }
+  },
+  "93:78": {
+    "inputs": {
+      "batch_index": [
+        "93:89",
+        0
+      ],
+      "length": 1,
+      "image": [
+        "56:105",
+        0
+      ]
+    },
+    "class_type": "ImageFromBatch",
+    "_meta": {
+      "title": "ImageFromBatch"
+    }
+  },
+  "93:89": {
+    "inputs": {
+      "value": "a - 1",
+      "a": [
+        "91",
+        0
+      ]
+    },
+    "class_type": "SimpleMath+",
+    "_meta": {
+      "title": "Image # as index"
+    }
+  }
+}
