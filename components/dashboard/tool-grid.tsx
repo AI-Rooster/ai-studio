@@ -11,6 +11,8 @@ function formatCategoryLabel(category: string) {
       return "Campaign Assets";
     case "avatar-tools":
       return "Avatar Tools";
+    case "campaign-ops":
+      return "Campaign Ops";
     default:
       return category
         .split("-")
@@ -33,6 +35,7 @@ export default function ToolGrid() {
     "motion",
     "campaign-assets",
     "avatar-tools",
+    "campaign-ops",
     ...Object.keys(groupedTools).filter(
       (category) =>
         !["product-visuals", "motion", "campaign-assets", "avatar-tools"].includes(category)

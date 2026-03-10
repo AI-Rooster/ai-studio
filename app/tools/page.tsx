@@ -10,9 +10,9 @@ export default function ToolsPage() {
           </div>
           <h1 className="mb-4 text-5xl font-bold">Tools for marketers</h1>
           <p className="text-lg text-zinc-400">
-            A growing toolkit for product visuals, motion, campaign assets and avatar
-            content. Start with the tools that are already wired and keep expanding from
-            the same system.
+            A growing toolkit for product visuals, motion, campaign assets, avatar
+            content and campaign planning. Start with the tools that are already wired
+            and keep expanding from the same system.
           </p>
         </div>
 

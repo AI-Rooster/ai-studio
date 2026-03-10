@@ -1,6 +1,9 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
+import { useSearchParams } from "next/navigation";
+import ToolHandoffBanner from "@/components/forms/tool-handoff-banner";
+import { readToolHandoffFromSearchParams } from "@/lib/tool-handoff";
 
 type FormProps = {
   toolId?: string;
@@ -144,6 +147,15 @@ export default function ImageToVideoForm({
   const [promptId, setPromptId] = useState("");
   const [status, setStatus] = useState("");
   const [jobDetails, setJobDetails] = useState<JobDetails | null>(null);
+  const searchParams = useSearchParams();
+  const handoff = useMemo(() => readToolHandoffFromSearchParams(searchParams), [searchParams]);
+  const [handoffApplied, setHandoffApplied] = useState(false);
+
+  useEffect(() => {
+    if (handoffApplied || !handoff) return;
+    if (handoff.prompt) setPrompt(handoff.prompt);
+    setHandoffApplied(true);
+  }, [handoffApplied, handoff]);
 
   const outputFiles = useMemo(() => {
     if (!jobDetails?.outputs) return [];
@@ -270,6 +282,8 @@ export default function ImageToVideoForm({
       <p className="mb-6 text-zinc-400">{description}</p>
 
       <form onSubmit={handleSubmit} className="space-y-6">
+
+      {handoff ? <div className="mb-6"><ToolHandoffBanner handoff={handoff} /></div> : null}
         <div className="rounded-xl border border-zinc-800 bg-black/40 p-4">
           <label className="mb-2 block text-sm font-medium text-zinc-300">
             Source image

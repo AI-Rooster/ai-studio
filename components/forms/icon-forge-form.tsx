@@ -1,6 +1,9 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
+import { useSearchParams } from "next/navigation";
+import ToolHandoffBanner from "@/components/forms/tool-handoff-banner";
+import { readToolHandoffFromSearchParams } from "@/lib/tool-handoff";
 import { ToolDefinition } from "@/lib/tools/types";
 
 type ErrorResponse = {
@@ -123,6 +126,20 @@ export default function IconForgeForm({ tool }: IconForgeFormProps) {
   const [promptId, setPromptId] = useState("");
   const [status, setStatus] = useState("");
   const [jobDetails, setJobDetails] = useState<JobDetails | null>(null);
+  const searchParams = useSearchParams();
+  const handoff = useMemo(() => readToolHandoffFromSearchParams(searchParams), [searchParams]);
+  const [handoffApplied, setHandoffApplied] = useState(false);
+
+  useEffect(() => {
+    if (handoffApplied || !handoff) return;
+    if (handoff.brandName || handoff.productName) {
+      setBrandDescription([handoff.brandName, handoff.productName, handoff.purpose].filter(Boolean).join(" — "));
+    }
+    if (handoff.prompt || handoff.notes) {
+      setAdditionalInstructions([handoff.prompt, handoff.notes].filter(Boolean).join("\n\n"));
+    }
+    setHandoffApplied(true);
+  }, [handoffApplied, handoff]);
 
   const outputFiles = useMemo(() => {
     if (!jobDetails?.outputs) return [];

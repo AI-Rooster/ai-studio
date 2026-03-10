@@ -1,6 +1,9 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
+import { useSearchParams } from "next/navigation";
+import ToolHandoffBanner from "@/components/forms/tool-handoff-banner";
+import { readToolHandoffFromSearchParams } from "@/lib/tool-handoff";
 
 type FormProps = {
   toolId?: string;
@@ -147,7 +150,22 @@ export default function MultiImageSequenceForm({
   const [promptId, setPromptId] = useState("");
   const [status, setStatus] = useState("");
   const [jobDetails, setJobDetails] = useState<JobDetails | null>(null);
+  const searchParams = useSearchParams();
+  const handoff = useMemo(
+    () => readToolHandoffFromSearchParams(searchParams),
+    [searchParams]
+  );
+  const [handoffApplied, setHandoffApplied] = useState(false);
 
+useEffect(() => {
+  if (handoffApplied || !handoff) return;
+
+  if (handoff.prompt) {
+    setPrompt(handoff.prompt);
+  }
+
+  setHandoffApplied(true);
+}, [handoffApplied, handoff]);
   function updateFrame(index: number, file: File | null) {
     setFrames((prev) => {
       const next = [...prev];
@@ -280,9 +298,11 @@ export default function MultiImageSequenceForm({
   return (
     <div className="rounded-2xl border border-zinc-800 bg-zinc-900 p-6">
       <h2 className="mb-3 text-2xl font-semibold text-white">{title}</h2>
-      <p className="mb-6 text-zinc-400">{description}</p>
+      <p className="mb-6 text-zinc-400">{"Upload exactly 6 key frames for one cohesive ~5-second video. The frames should show progression of the same scene or shot, not six unrelated scenes."}</p>
 
       <form onSubmit={handleSubmit} className="space-y-6">
+
+      {handoff ? <div className="mb-6"><ToolHandoffBanner handoff={handoff} /></div> : null}
         <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
           {frames.map((_, index) => (
             <div

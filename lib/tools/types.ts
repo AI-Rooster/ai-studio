@@ -12,6 +12,7 @@ export type ToolDefinition = {
   id: string;
   title: string;
   shortDescription: string;
+  longDescription?: string;
   category: ToolCategory;
   inputMode: string;
   outputMode: string;
@@ -20,4 +21,8 @@ export type ToolDefinition = {
   accepts?: string[];
   creditMode?: CreditMode;
   creditCostNote?: string;
+  generateRoute?: string;
+  statusRouteBase?: string;
+  detailsRouteBase?: string;
+  outputRoute?: string;
 };
